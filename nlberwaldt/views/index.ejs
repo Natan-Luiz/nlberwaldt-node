@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<style>
+  body{
+    background-color: rgb(200,200,200)
+  }
+
+  h2{
+    color: rgb(10,10,150);
+  }
+
+  .quotes {
+    background-color: rgb(240,235,235);
+	border: 2px solid;
+	border-spacing: 0px;
+	padding: 20px 20px 20px 20px;
+  }
+  
+  #quot{
+	border: 1px solid;
+	padding: 5px 5px 5px 5px;
+	}
+	
+  #name{
+	font-weight: bold;
+	text-align: right;
+	border: 1px solid;
+	padding: 5px 5px 5px 5px;
+	}
+	
+</style>
+<body>
+  <table class="quotes">
+   <h2>FRASES CONHECIDAS DE POKEMON:</h2>
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <tr class="quote">
+     <td id="name"><%= quotes[i].name %></td>
+     <td id="quot"><%= quotes[i].quote %></td>
+    </tr>
+  <% } %>
+  </table>
+&nbsp
+
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">VAI!</button>
+  </form>
+  
+&nbsp
+&nbsp
+&nbsp
+
+<div class="troca">
+  <h2>Troque seu ultimo Charmander por um Squirtle.</h2>
+  <button id="update"> SQUIRTLE!!!! </button>
+</div>
+
+<div class="tira">
+  <h2>Retire um Pikachu.</h2>
+  <button id="delete"> -- PIKACHU </button>
+</div>
+
+<div class="add">
+  <h2>Adiciona uma epica frase do Mew.</h2>
+  <button type= "submit" id="add"> ++ MEW </button>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
